@@ -240,6 +240,7 @@ nav {
     padding: 15px;
     border-radius: 10px 10px 10px 10px; /* Optional: rounded corners */
     z-index: 5;
+    box-shadow: #333;
 }
 
 nav ul {
@@ -545,7 +546,7 @@ padding: 10px;
 border-radius: 8px;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 margin-bottom: auto;
-margin-right:100px;
+
 align-self: center; /* 가로 중앙 정렬 */
 }
 
@@ -588,33 +589,39 @@ border-radius: 8px; /* 이미지에 둥근 모서리를 추가 */
     left: 0;
     background: lightblue;
     color: var(--bg-color);
+   
     
 }
 
 .pin-wrap {
 display: flex;
 width: 900vw; /* Adjust width as per your content */
+height: 1000px;
+margin-top: 100px;
 }
 .pin-wrap img{
 display: flex;
-width: 30px;
-
+width: 1000px;
+margin-right: 50px;
 overflow-x: auto; /* Enable horizontal scrolling */
 }
 .pin-wrap > * {
 min-width: 30vw; /* Adjust as needed */
-padding: 0 5vw;
+
 flex-shrink: 0; /* Prevent child elements from shrinking */
 }
 
 img {
-height: 80vh;
+height: 90vh;
 width: auto;
 object-fit: cover;
 flex-shrink: 0; /* Prevent images from shrinking */
 }
 
-
+.talk ul{
+    width:50px;
+    height: 50px;
+}
 
 h2 {
     font-size: 2rem;
@@ -651,6 +658,7 @@ section.timeline {
     padding: 50px 0;
     z-index: 2;
 }
+
 section.synopsis {
     width: auto;
     height: 2000px;
@@ -685,23 +693,48 @@ section.character {
 
 section.mainpage {
     width: auto;
-    height: 1500px;
-    background-color: orange; /* Lime green background */
+    height: 1000px;
+    background-color: rgb(255, 255, 255); 
     color: #fff; /* White text */
     padding: 50px 0;
 }
-
+.orangeright {
+    width: 1200px; /* Width of the orange rectangle */
+    height: 60%; /* Make it as tall as the section */
+    background-color: orange; /* Orange background */
+    position: absolute; /* Position it absolutely within the section */
+    right: 0; /* Attach it to the right side */
+    margin-top: 60px;
+    
+}
 section.userpage {
     width: auto;
-    height: 1500px;
-    background-color: white; /* Lime green background */
+    height: 900px;
+    background-color:rgb(253, 220, 54); 
     color: #fff; /* White text */
     padding: 50px 0;
 }
-
+.orangeleft {
+    width: 1200px; /* Width of the orange rectangle */
+    height: 60%; /* Make it as tall as the section */
+    background-color: orange; /* Orange background */
+    position: absolute; /* Position it absolutely within the section */
+    left: 0; /* Attach it to the right side */
+    margin-top: 60px;
+    
+}
+.whiteright {
+    width: 620px; /* Width of the orange rectangle */
+    height: 60%; /* Make it as tall as the section */
+    background-color: rgb(255, 255, 255); /* Orange background */
+    position: absolute; /* Position it absolutely within the section */
+    right: 0; /* Attach it to the right side */
+    margin-top: 60px;
+    
+}
 section.store {
     width: auto;
-    height: 2000px;
+    height: 1100px;
     background-color: #ffffff; /* Hot pink background */
     color: #fff; /* White text */
     padding: 50px 0;
@@ -709,7 +742,7 @@ section.store {
 
 section.gameplayimage {
     width: auto;
-    height: 2000px;
+    height: 1100px;
     background-color: #9b9b9b; /* Indigo background */
     color: #fff; /* White text */
     padding: 50px 0;
@@ -777,7 +810,7 @@ footer {
 .footer-container .footer-logo img {
     width: 300px;
     height: auto;
-    margin-left: 100px;
+    margin-left: 10px;
 }
 
 footer p {
@@ -796,10 +829,10 @@ footer p {
     justify-content: center;
     width: 800px;
     height: 500px;
-    border: 1px solid #aaa;
-    background-color: white; /* 초기 배경색 흰색 */
+    border: 1px solid #010101;
+    background-color: rgb(0, 0, 0); /* 초기 배경색 흰색 */
     margin-bottom: 20px;
-    margin-left: 450px;
+    margin-left: 400px;
     margin-top: 100px;
 }
 #result.a {
@@ -828,6 +861,8 @@ footer p {
     background-position: center center;
     background-color: #fff;
     cursor: pointer;
+    margin-left: 50px;
+   
 }
 .answer:nth-of-type(1) {
     background-image: url(img/icon_wrong1.svg);
