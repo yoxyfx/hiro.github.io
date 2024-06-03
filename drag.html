@@ -3,16 +3,29 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Draggable Accessories</title>
     <style>
-
-section.store {
-    width: auto;
-    height: 2000px;
-    background-color: #ff69b4; /* Hot pink background */
-    color: #fff; /* White text */
-    padding: 50px 0;
-}
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        section.store {
+            width: 100%;
+            height: 100%;
+            background-color: #ff69b4; /* Hot pink background */
+            color: #fff; /* White text */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
         #result {
             display: flex;
             align-items: center;
@@ -21,6 +34,7 @@ section.store {
             height: 400px;
             border: 1px solid #aaa;
             background-color: white; /* 초기 배경색 흰색 */
+            margin-bottom: 20px;
         }
         #result.a {
             background: aqua;
@@ -36,6 +50,8 @@ section.store {
         }
         .answer-box {
             display: flex;
+            justify-content: center;
+            gap: 10px;
         }
         .answer {
             width: 100px;
@@ -45,6 +61,7 @@ section.store {
             background-size: contain;
             background-position: center center;
             background-color: #fff;
+            cursor: pointer;
         }
         .answer:nth-of-type(1) {
             background-image: url(img/icon_wrong1.svg);
@@ -60,32 +77,28 @@ section.store {
         }
     </style>
 </head>
-<section id="store" class="store">
-    <div class="image-container">
-        <img src="img/" alt="Branding">
-    </div>
-    <p>다음중 고양이가 제일 좋아하는 음식은?</p>
-<div id="result">악세서리를 올리세요</div>
-<div class="answer-box">
-    <div class="answer a"></div>
-    <div class="answer b"></div>
-    <div class="answer c"></div>
-    <div class="answer d"></div>
-</div>
 <body>
-
+<section id="store" class="store">
+    <div id="result">악세서리를 올려보세요!</div>
+    <div class="answer-box">
+        <div class="answer a"></div>
+        <div class="answer b"></div>
+        <div class="answer c"></div>
+        <div class="answer d"></div>
+    </div>
+</section>
 
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
 <script>
-    $( () => {
-        $( ".answer" ).draggable({
+    $(() => {
+        $(".answer").draggable({
             revertDuration: 0 // 드래그된 요소가 되돌아갈 때의 애니메이션 지속시간 설정
         });
 
-        $( "#result" ).droppable({
+        $("#result").droppable({
             accept: ".answer", // 모든 .answer 요소를 droppable로 수락
-            drop: function( event, ui ) {
+            drop: function(event, ui) {
                 let className = ui.helper.attr("class").split(' ')[1];
                 let message;
                 if (className === 'c') {
@@ -101,7 +114,7 @@ section.store {
                 // 드롭된 요소가 다시 드래그 가능하게 설정
                 ui.helper.draggable('option', 'revert', false);
             },
-            out: function( event, ui ) {
+            out: function(event, ui) {
                 // 드래그된 요소가 droppable 영역을 벗어났을 때 초기 상태로 돌아감
                 $(this)
                     .removeClass()

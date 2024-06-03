@@ -64,8 +64,8 @@
         <ul>
             <li><a href="#main">Main</a></li>
             <li><a href="#timeline">Synopsis</a></li>
+            <li><a href="#sectionpin">Character</a></li>
             <li><a href="#video">Video</a></li>
-            <li><a href="#chapter">Chapter</a></li>
             <li><a href="#charcter">Character</a></li>
             <li><a href="#gameplayimage">Game Play</a></li>
 
@@ -133,9 +133,11 @@
       </section>
     
     <div class="horizontal">
-        <section id="sectionPin">
+        <div class="image-container">
+            <img src="img/chapterpage.png" alt="Branding">
+        </div>
+        <section id="sectionPin" class="sectionPin">
             <div class="pin-wrap">
-                <h2>캐릭터 소개</h2>
                 <img src="img/c.png" alt="">
                 <img src="img/c.png" alt="">
                 <img src="img/c.png" alt="">
@@ -158,37 +160,32 @@
         </div>
       </section>
 
-      <section id="main" class="main">
+      <section id="mainpage" class="mainpage">
             <div class="image-container">
-                <img src="img/VIDEO.png" alt="Branding">
+                <img src="img/mainpage.png" alt="Branding">
             </div>
     </section>
 
 
-    <section id="main" class="main">
+    <section id="userpage" class="userpage">
       <div class="image-container">
-          <img src="img/VIDEO.png" alt="Branding">
+          <img src="img/userpage.png" alt="Branding">
       </div>
 </section>
 
 <section id="store" class="store">
   <div class="image-container">
-      <img src="img/VIDEO.png" alt="Branding">
+      <img src="img/store.png" alt="Branding">
+  </div>
+  <div id="result">악세서리를 올려보세요!</div>
+  <div class="answer-box">
+      <div class="answer a"></div>
+      <div class="answer b"></div>
+      <div class="answer c"></div>
+      <div class="answer d"></div>
   </div>
 </section>
-        <section id="video" class="video">
-          <div class="container">
-              <div class="image-container">
-                  <img src="img/VIDEO.png" alt="Branding">
-              </div>
-          </div>
-          <div class="video-container">
-            <video class="video-player" controls>
-                <source src="your-video-file.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-      </section>
+     
     </div>
     <section id="gameplayimage" class="gameplayimage"> 
       <div class="image-container">
@@ -400,6 +397,42 @@
             stop: function(event, ui) {
                 isDragging = false;
                 ui.helper.css('transform', 'translate(0px, 0px)');
+            }
+        });
+    });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+<script>
+    $(() => {
+        $(".answer").draggable({
+            revertDuration: 0 // 드래그된 요소가 되돌아갈 때의 애니메이션 지속시간 설정
+        });
+
+        $("#result").droppable({
+            accept: ".answer", // 모든 .answer 요소를 droppable로 수락
+            drop: function(event, ui) {
+                let className = ui.helper.attr("class").split(' ')[1];
+                let message;
+                if (className === 'c') {
+                    message = '정답입니다!';
+                } else {
+                    message = '틀렸습니다!';
+                }
+                $(this)
+                    .removeClass()
+                    .addClass(className)
+                    .html(message);
+
+                // 드롭된 요소가 다시 드래그 가능하게 설정
+                ui.helper.draggable('option', 'revert', false);
+            },
+            out: function(event, ui) {
+                // 드래그된 요소가 droppable 영역을 벗어났을 때 초기 상태로 돌아감
+                $(this)
+                    .removeClass()
+                    .html('악세서리를 올리세요');
             }
         });
     });
