@@ -142,7 +142,6 @@ z-index: -1; /* 배경 이미지보다 뒤에 위치하도록 설정 */
 }
 
 body {
-font-family: 'Oswald', sans-serif;
 margin: 0;
 padding: 0;
 background-image: url('img/background.png');
@@ -199,12 +198,12 @@ header h1 {
 .logo {
 position: fixed;
 top: 70px;
-left: 100px;
+left: 200px;
 z-index: 1000; /* 다른 콘텐츠 위에 로고가 표시되도록 z-index 설정 */
 }
 
 .logo img {
-width: 130px;
+width: 150px;
 height: auto;
 }
 
@@ -232,7 +231,7 @@ h2:hover {
 /* Navigation style */
 nav {
     position: fixed;
-    width: 100px;
+    width: 120px;
     top: 50%;
     left: 3%;
     transform: translateY(-50%);
@@ -258,12 +257,12 @@ nav ul li {
 nav ul li a {
     color: #000000;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #f43f3f;
+    color: orange;
     font-weight: bold;
 }
 
