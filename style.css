@@ -310,7 +310,10 @@ font-size: 2.5rem;
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .timeline ul {
-background: orange;
+    background-image: url('img/bgorange.png');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
 padding: 50px 0;
 }
 
@@ -652,7 +655,11 @@ section.main {
 section.timeline {
     width: auto;
     height: 1600px;
-    background-color: orange;
+
+    background-image: url('img/bgorange.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: #333; /* Dark grey text */
     padding: 50px 0;
     z-index: 2;
@@ -710,6 +717,10 @@ section.userpage {
     width: auto;
     height: 900px;
     background-color:rgb(253, 220, 54); 
+    background-image: url('img/bgyellow.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: #fff; /* White text */
     padding: 50px 0;
 }
@@ -734,9 +745,14 @@ section.userpage {
 section.store {
     width: auto;
     height: 1100px;
-    background-color: #ffffff; /* Hot pink background */
+    background-color: #ffffff; 
+    background-image: url('img/bgwhite.png');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
     color: #fff; /* White text */
     padding: 50px 0;
+    z-index: 2;
 }
 
 section.gameplayimage {
@@ -745,6 +761,7 @@ section.gameplayimage {
     background-color: #9b9b9b; /* Indigo background */
     color: #fff; /* White text */
     padding: 50px 0;
+    z-index: 1;
 }
 
 section.branding {
