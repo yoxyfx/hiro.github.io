@@ -32,9 +32,13 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: var(--primary-color);
+    background-image: url('img/bgorange.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     height: 100vh;
     width: 100vw;
+    margin-left: 0px;
     text-align: center;
     z-index: 2;
 }
@@ -196,14 +200,14 @@ header h1 {
 }
 
 .logo {
-position: fixed;
-top: 70px;
-left: 200px;
+position: absolute;
+top: 20px;
+left: 20px;
 z-index: 1000; /* 다른 콘텐츠 위에 로고가 표시되도록 z-index 설정 */
 }
 
 .logo img {
-width: 150px;
+width: 300px;
 height: auto;
 }
 
@@ -233,7 +237,7 @@ nav {
     position: fixed;
     width: 120px;
     top: 50%;
-    left: 3%;
+    left: 3.1%;
     transform: translateY(-50%);
     background-color: rgba(255, 255, 255, 0.9); /* Optional: to make the background of the nav a bit transparent */
     padding: 15px;
@@ -315,6 +319,7 @@ background-size: cover;
 background-position: center;
 background-attachment: fixed;
 padding: 50px 0;
+margin-left: 50px;
 }
 
 .timeline ul li {
@@ -523,7 +528,7 @@ section.synopsis {
 section.video {
     width: auto;
     height: 50px;
-    background-color: #ffd700; /* Gold background */
+    background-color: rgba(255, 245, 0, 0.8); /* Gold background */
     color: #333; /* Dark grey text */
     padding: 50px 0;
 }
@@ -532,7 +537,7 @@ section.video {
 .video {
 width: auto;
 height: 2000px;
-background-color: #ffd700; /* Gold background */
+background-color:  rgba(255, 245, 0, 0.8); /* Gold background */
 color: #333; /* Dark grey text */
 padding: 50px 0;
 display: flex;
@@ -548,7 +553,7 @@ padding: 10px;
 border-radius: 8px;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 margin-bottom: auto;
-
+margin-left: 50px;
 align-self: center; /* 가로 중앙 정렬 */
 }
 
@@ -589,7 +594,7 @@ border-radius: 8px; /* 이미지에 둥근 모서리를 추가 */
     overflow: hidden;
     display: flex;
     left: 0;
-    background: lightblue;
+    background: rgb(255, 255, 255);
     color: var(--bg-color);
    
     
@@ -676,7 +681,7 @@ section.synopsis {
 section.video {
     width: auto;
     height: 1000px;
-    background-color: #ffd700; /* Gold background */
+    background-color:  rgba(255, 245, 0, 0.8); /* Gold background */
     color: #333; /* Dark grey text */
     padding: 50px 0;
 }
@@ -684,7 +689,7 @@ section.video {
 section.chapterpage {
     width: auto;
     height: 2000px;
-    background-color: #87ceeb; /* Sky blue background */
+    background-color: #ffffff; /* Sky blue background */
     color: #333; /* Dark grey text */
     padding: 50px 0;
 }
@@ -707,7 +712,7 @@ section.mainpage {
 .orangeright {
     width: 1200px; /* Width of the orange rectangle */
     height: 60%; /* Make it as tall as the section */
-    background-color: orange; /* Orange background */
+    background-color: #FF9900; /* Orange background */
     position: absolute; /* Position it absolutely within the section */
     right: 0; /* Attach it to the right side */
     margin-top: 60px;
@@ -727,7 +732,7 @@ section.userpage {
 .orangeleft {
     width: 1200px; /* Width of the orange rectangle */
     height: 60%; /* Make it as tall as the section */
-    background-color: orange; /* Orange background */
+    background-color: #FF9900; /* Orange background */
     position: absolute; /* Position it absolutely within the section */
     left: 0; /* Attach it to the right side */
     margin-top: 60px;
@@ -763,6 +768,13 @@ section.gameplayimage {
     padding: 50px 0;
     z-index: 1;
 }
+.gameplayimage  img{
+    width:1000px;
+    height: auto;
+    margin-top: 180px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
 
 section.branding {
     width: auto;
@@ -773,11 +785,11 @@ section.branding {
 }
 
 .brandinglogo img{
-    width:1500px;
+    width:1000px;
     height: auto;
     margin-top: 180px;
     margin-bottom: 10px;
-    margin-left: 250px;
+    margin-left: 280px;
 }
 /*CONTACT*/
 
@@ -786,14 +798,14 @@ section.contact {
   height: 400px;
   background-color: #ffffff; /* Red background */
   color: #333; /* Dark grey text */
-  padding: 50px 0;
+  padding: 60px 0;
   position: relative; /* Make the section a positioned element */
 }
 
 .orange-rectangle {
     width: 800px; /* Width of the orange rectangle */
     height: 50%; /* Make it as tall as the section */
-    background-color: orange; /* Orange background */
+    background-color: #FF9900; /* Orange background */
     position: absolute; /* Position it absolutely within the section */
     right: 0; /* Attach it to the right side */
     top: 100px; /* Align it to the top */
@@ -801,14 +813,14 @@ section.contact {
 .white-rectangle {
     width: 550px; /* Width of the orange rectangle */
     height: 25%; /* Make it as tall as the section */
-    background-color: rgb(253, 253, 253); /* Orange background */
+    background-color: rgb(255, 255, 255); /* Orange background */
     position: absolute; /* Position it absolutely within the section */
     right: 0; /* Attach it to the right side */
     top:150px; /* Align it to the top */
 }
 footer {
     width: 105%;
-    background-color: darkorange;
+    background-color: #FF9900;
     color: #fff;
     text-align: center;
     box-sizing: border-box;
@@ -835,7 +847,7 @@ footer p {
     text-align: right;
 }
 .horizontal{
-    color:lightblue;
+    color:rgb(255, 255, 255);
 }
 
 
@@ -843,12 +855,12 @@ footer p {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 800px;
-    height: 500px;
+    width: 900px;
+    height: 600px;
     border: 1px solid #010101;
     background-color: rgb(0, 0, 0); /* 초기 배경색 흰색 */
     margin-bottom: 20px;
-    margin-left: 400px;
+    margin-left: 440px;
     margin-top: 100px;
 }
 #result.a {
@@ -866,18 +878,18 @@ footer p {
 .answer-box {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    margin-left: 20px;
 }
 .answer {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     border: 1px solid #aaa;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
     background-color: #fff;
     cursor: pointer;
-    margin-left: 50px;
+    margin-left: 65px;
    
 }
 .answer:nth-of-type(1) {
@@ -893,5 +905,9 @@ footer p {
     background-image: url(img/icon_wrong3.svg);
 }
 .horizontal{
-    background-color: lightblue;
+    background-color: rgb(255, 255, 255);
+}
+
+h4{
+    margin-left: 60px;
 }
