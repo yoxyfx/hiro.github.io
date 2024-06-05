@@ -804,20 +804,29 @@ section.contact {
 }
 
 .orange-rectangle {
-    width: 800px; /* Width of the orange rectangle */
-    height: 50%; /* Make it as tall as the section */
-    background-color: #FF9900; /* Orange background */
+    width: 1200px; /* Width of the orange rectangle */
+    height: 60%; /* Make it as tall as the section */
+    background-color: #FFE500; /* Orange background */
     position: absolute; /* Position it absolutely within the section */
     right: 0; /* Attach it to the right side */
     top: 100px; /* Align it to the top */
 }
 .white-rectangle {
-    width: 550px; /* Width of the orange rectangle */
-    height: 25%; /* Make it as tall as the section */
+    width: 1000px; /* Width of the orange rectangle */
+    height: 20%; /* Make it as tall as the section */
     background-color: rgb(255, 255, 255); /* Orange background */
     position: absolute; /* Position it absolutely within the section */
     right: 0; /* Attach it to the right side */
-    top:150px; /* Align it to the top */
+    top:180px; /* Align it to the top */
+}
+
+.contact p {
+    font-style: bold;
+    margin: 40px 100px;
+    margin-left:180px;
+    margin-top:205px;
+    font-size: 25px;
+    text-align: left;
 }
 footer {
     width: 105%;
@@ -839,13 +848,15 @@ footer {
 .footer-container .footer-logo img {
     width: 300px;
     height: auto;
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-right: 30px;
 }
 
 footer p {
-    margin: 50px 100px;
+    margin: 40px 100px;
+    margin-left:10px;
     font-size: 16px;
-    text-align: right;
+    text-align: left;
 }
 .horizontal{
     color:rgb(255, 255, 255);
