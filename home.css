@@ -1,0 +1,779 @@
+ /* CSS styles for intro.html */
+ @font-face {
+    font-family: 'TmoneyRoundWindRegular';
+    src: url('01_otf/TmoneyRoundWindRegular.otf') format('opentype');
+    font-weight: bolder;
+    font-style: bolder;
+}
+body {
+    font-family: 'TmoneyRoundWindRegular', sans-serif;
+    background: var(--background);
+    overflow: auto;
+    transition: 0.3s ease-out;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+    overscroll-behavior: none;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* logo */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* 다른 콘텐츠 위에 로고가 표시되도록 z-index 설정 */
+    }
+    
+    .logo img {
+    width: 300px;
+    height: auto;
+    margin-left: 10px;
+    }
+    
+/* intro */
+    .introcontainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-image: url('img/bgorange.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 110vh;
+        width: 100vw;
+        margin-left: 0px;
+        text-align: center;
+        z-index: 2;
+    }
+    /*글자 높이 조절*/
+    .intro {
+        height: 90vh;
+        width: 100vw;
+        margin-top: 250px;
+    }
+    .title {
+        font-size: 100px;
+        color: #fff;
+        font-weight: bold;
+        animation: wave 0.6s ease-in-out forwards, jump 0.8s ease-in-out forwards;
+        position: relative;
+        opacity: 0;
+        display: inline-block;
+    }
+    
+    @keyframes wave {
+        0% {
+            top: 0;
+        }
+        100% {
+            top: 100%;
+        }
+    }
+    
+    @keyframes jump {
+        0% {
+            transform: translateY(0) scale(1);
+            opacity: 0;
+        }
+        60% {
+            transform: translateY(-50px) scale(1.2);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+    }
+    
+    .title:nth-child(1) { animation-delay: 0.1s; }
+    .title:nth-child(2) { animation-delay: 0.2s; }
+    .title:nth-child(3) { animation-delay: 0.3s; }
+    .title:nth-child(4) { animation-delay: 0.4s; }
+    .title:nth-child(5) { animation-delay: 0.5s; }
+    .title:nth-child(6) { animation-delay: 0.6s; }
+    .title:nth-child(7) { animation-delay: 0.7s; }
+    .title:nth-child(8) { animation-delay: 0.8s; }
+    .title:nth-child(9) { animation-delay: 0.9s; }
+    .title:nth-child(10) { animation-delay: 1.0s; }
+    .title:nth-child(11) { animation-delay: 1.1s; }
+    .title:nth-child(12) { animation-delay: 1.2s; }
+    .title:nth-child(13) { animation-delay: 1.3s; }
+    .title:nth-child(14) { animation-delay: 1.4s; }
+    .title:nth-child(15) { animation-delay: 1.5s; }
+    .title:nth-child(16) { animation-delay: 1.6s; }
+    .title:nth-child(17) { animation-delay: 1.7s; }
+    .title:nth-child(18) { animation-delay: 1.8s; }
+    .title:nth-child(19) { animation-delay: 1.9s; }
+    /*마우스*/
+    .mouse {
+        max-width: 2.5rem;
+        width: 100%;
+        height: auto;
+    }
+    
+    .scroll {
+        animation-name: scroll;
+        animation-duration: 1.5s;
+        animation-timing-function: cubic-bezier(0.650, -0.550, 0.250, 1.500);
+        animation-iteration-count: infinite;
+        transform-origin: 50% 20.5px;
+        will-change: transform, opacity;
+        opacity: 1;
+    }
+    
+    .scroll-link {
+        position: absolute;
+        bottom: 10rem; /* Adjust the distance from the bottom as needed */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    
+    @keyframes scroll {
+        0%, 20% {
+            transform: translateY(0) scaleY(1);
+        }
+        100% {
+            transform: translateY(36px) scaleY(2);
+            opacity: 0;
+        }
+    }
+    
+    html {
+        scroll-behavior: smooth; /* Smooth scrolling */
+    } 
+    
+    /*네비게이션바*/
+    nav {
+        position: fixed;
+        width: 120px;
+        height: 1000px; /* Increased height */
+        top: 58%;
+        left: 3.1%;
+        transform: translateY(-50%);
+        background-image: url('img/navbg.png');
+        background-size: 100% 60%; /* Ensures the entire image is visible */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        background-position: center; /* Centers the image */   
+        padding: 15px;
+        border-radius: 10px; /* Rounded corners */
+        z-index: 5;
+    } 
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        height: 100%; /* Ensures the ul takes the full height of the nav */
+        justify-content: center; /* Centers the list items vertically */
+    }
+    nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+    nav ul li a {
+        color: #000000;
+        text-decoration: none;
+        font-size: 15px;
+        transition: color 0.3s;
+        font-weight: bolder;
+        margin-left: 10px;
+    }
+    nav ul li a:hover {
+        color: orange;
+        font-weight: bolder;
+    }
+    /*section: 챕터페이지*/
+    section.main {
+        width: auto;
+        height: 900px;
+        color: #fff; /* White text */
+        padding: 50px 0;
+    }
+        #draggable {
+            position: relative; /* Allow positioning with top/left */
+            border: 2px solid #aaa;
+            transition: transform 0.2s ease-in-out; /* Apply transition effect */
+            cursor: move; /* Change cursor to indicate draggable element */
+            z-index: 1;
+        }
+        #draggable img {
+            display: block;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            z-index: -1;
+        }
+    /*시놉시스*/ 
+    section.timeline {
+        width: auto;
+        height: 6000px;
+        background-image: url('img/bgorange.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: #333; /* Dark grey text */
+        padding: 50px 0;
+        z-index: 2;
+    }
+    .timeline ul {
+        background-image: url('img/bgorange.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        padding: 50px 0;
+    }
+    .timeline ul li {
+        list-style-type: none;
+        width: 8px;
+        margin: 0 auto;
+        padding-top: 50px;
+        position: relative;
+        left: 50px; /* Adjust this value based on your layout needs */
+    }
+    .timeline ul li::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: inherit;
+        z-index: 1;
+    }
+    .timeline ul li div {
+        position: relative;
+        bottom: 0;
+        width: 400px; /* Adjust width as needed */
+        height: auto;
+        text-align: center; /* Center the content horizontally */
+        margin-top: 40px;
+    }
+    .timeline ul li div img {
+        max-width: 150%; /* Adjust image size as needed */
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    .timeline ul li div .text-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 700px;
+        height: auto;
+    }
+    .timeline ul li div span {
+        display: block; /* Make span a block-level element */
+        text-align: center; /* Center content horizontally */
+        justify-content: left; /* Optional for vertical alignment */
+        left: 5%; /* Adjust the left position */
+    }
+    .timeline ul li:nth-child(odd) div {
+        left: -439px; /* Moved to the left */
+        text-align: left; /* Align text to the left */
+    }
+    .timeline ul li:nth-child(even) div {
+        left: auto; /* Reset left to default */
+        right: 45px; /* Moved to the right */
+        text-align: right; /* Align text to the right */
+    }
+
+    .timeline ul li div {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+    }
+    .timeline ul li:nth-child(odd) div {
+        transform: translate3d(-400px, 0, 0); /* Adjusted transform direction */
+    }
+    .timeline ul li:nth-child(even) div {
+        transform: translate3d(200px, 0, 0); /* Adjusted transform direction */
+    }
+    .timeline ul li.in-view div {
+        transform: none;
+        visibility: visible;
+        opacity: 1;
+    }
+    @media screen and (max-width: 900px) {
+        .timeline ul li div {
+            width: 250px;
+        }
+        .timeline ul li:nth-child(even) div {
+            left: -289px; /* 250 + 45 - 6 */
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .timeline ul li {
+            margin-left: 20px;
+        }
+        .timeline ul li div {
+            width: calc(100vw - 91px);
+        }
+        .timeline ul li:nth-child(even) div {
+            left: 45px;
+        }
+    }
+
+    /* Additional CSS to move GIF images to the left */
+    .timeline ul li:nth-child(odd) div img[src$=".gif"] {
+        margin-left: -140px; /* Adjust this value as needed to move GIFs to the left */
+       margin-top: 20px;
+        width:95%;
+        height: auto;
+    }
+
+    /* Additional CSS to keep GIF images on the right unchanged */
+    .timeline ul li:nth-child(even) div img[src$=".gif"] {
+        margin-right: 0; /* Keep the margin-right as 0 to maintain position */
+        margin-top: 100px;
+    }
+    
+   /*SCROLL*/
+   .image-container {
+    position: relative;
+    width: calc(100% - 200px); /* 부모 요소 너비에서 200px을 뺀 값으로 설정 */
+    height: 624px; /* 카드의 높이를 원하는 값으로 설정 */
+    display: flex;
+    justify-content: flex-start; /* 이미지를 왼쪽으로 정렬 */
+    margin-left: -100px; /* 왼쪽 여백을 100px로 설정 */
+    margin-top: 20px; /* 상단 여백을 필요에 따라 조정 */
+    overflow: hidden; /* 이미지를 컨테이너 내에서 자르지 않도록 설정 */
+}
+
+.image-container img {
+    width: 100%; /* 이미지 너비를 컨테이너에 맞게 설정 */
+    height: 100%; /* 이미지 높이를 컨테이너에 맞게 설정 */
+    object-fit: cover; /* 이미지를 컨테이너에 맞게 자르기 */
+    border-radius: 10px; /* 둥근 모서리 설정 */
+}
+
+.image-container img.gif-overlay {
+    position: absolute;
+    top: 50%; /* 이미지의 세로 중앙에 위치하도록 설정 */
+    left: 5%; /* 상대적으로 왼쪽에 배치 */
+    width: 15%; /* GIF 오버레이의 너비를 이미지의 일부로 설정 */
+    transform: translate(-50%, -50%); /* 세로와 가로 중앙에 정렬 */
+    z-index: 2; /* GIF가 이미지 위에 나타나도록 설정 */
+    pointer-events: none; /* GIF가 클릭 이벤트를 방해하지 않도록 설정 */
+}
+
+
+
+
+
+
+#sectionPin {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    left: 0;
+    background: rgb(255, 255, 255);
+    color: var(--bg-color);
+}
+.pin-wrap {
+    display: flex;
+    width: 900vw; /* Adjust width as per your content */
+    height: 1000px;
+    margin-top: 100px;
+}
+.pin-wrap img{
+    display: flex;
+    width: 1127px;
+    height: 624px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+}
+.pin-wrap > * {
+    min-width: 30vw; /* Adjust as needed */
+    flex-shrink: 0; /* Prevent child elements from shrinking */
+}
+.after-pin {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e3857a;
+    color: #f1dba7;
+}
+    /*VIDEO*/
+    section.video {
+        width: auto;
+        height: 1000px;
+        background-color:  rgba(255, 245, 0, 0.8); /* Gold background */
+        color: #333; /* Dark grey text */
+        padding: 50px 0;
+    }
+    .video {
+        width: auto;
+        height: 2000px;
+        background-color:  rgba(255, 245, 0, 0.8); /* Gold background */
+        color: #333; /* Dark grey text */
+        padding: 50px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        }  
+    .video-container {
+    width: auto;
+    max-width: 1000px;
+    background-color: #000;
+    padding: 10px;
+    margin-top: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: auto;
+    margin-left: 50px;
+    align-self: center; /* 가로 중앙 정렬 */
+    }
+    .video-player {
+    width: 100%;
+    height: 600px; /* Adjust height as needed */
+    object-fit: cover;
+    }
+    /* Media query for responsiveness */
+    @media (max-width: 768px) {
+    .video-player {
+    height: 300px; /* Adjust height for smaller screens */
+    }
+    }
+    
+    /*MAINPAGE DESCIPTION*/
+    section.mainpage {
+        width: auto;
+        height: 1000px;
+        background-color: rgb(255, 255, 255); 
+        color: #fff; /* White text */
+        padding: 50px 0;
+    }
+    section.mainpage.ul{
+        text-align: left;
+        color:black;
+        left:0%;
+        margin-right: 1000px;
+        margin-top: 100px;
+    }
+    .orangeright {
+        width: 1000px; /* Width of the orange rectangle */
+        height: 60%; /* Make it as tall as the section */
+        background-color: #FF9900; /* Orange background */
+        position: absolute; /* Position it absolutely within the section */
+        right: 0; /* Attach it to the right side */
+        margin-top: 60px;   
+    }
+    
+    /*USERPAGE DESCRIPTION*/
+    section.userpage {
+        width: auto;
+        height: 900px;
+        background-color:rgb(253, 220, 54); 
+        background-image: url('img/bgyellow.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: #fff; /* White text */
+        padding: 50px 0;
+    }
+    .orangeleft {
+        width: 1200px; /* Width of the orange rectangle */
+        height: 60%; /* Make it as tall as the section */
+        background-color: #FF9900; /* Orange background */
+        position: absolute; /* Position it absolutely within the section */
+        left: 0; /* Attach it to the right side */
+        margin-top: 60px;
+        
+    }
+    .whiteright {
+        width: 620px; /* Width of the orange rectangle */
+        height: 60%; /* Make it as tall as the section */
+        background-color: rgb(255, 255, 255); /* Orange background */
+        position: absolute; /* Position it absolutely within the section */
+        right: 0; /* Attach it to the right side */
+        margin-top: 60px;
+        
+    }
+
+    /*STORE*/
+    section.store {
+        width: auto;
+        height: 1100px;
+        background-color: #949494; 
+        background-image: url('img/bgwhite.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: #fff; /* White text */
+        padding: 50px 0;
+        z-index: 1;
+    }
+    #result {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 852px;
+        height: 393px;
+        border: 1px solid #010101;
+        background-color: rgb(0, 0, 0);
+        color: white;
+        margin-bottom: 20px;
+        margin-left: 420px;
+        margin-top: 100px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+      .answer-box {
+        display: flex;
+        justify-content: center;
+        margin-left: -20px;
+      }
+      .answer {
+        width: 178px;
+        height: 178px;
+        border: 2px solid #aaa;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-color: #fff;
+        cursor: pointer;
+        margin-left: 64px;
+      }
+
+   /*BRANDING*/
+        section.branding {
+            width: auto;
+            height: 1000px;
+            background-color: #fff; /* White background */
+            color: #333; /* Dark grey text */
+            padding: 50px 0;
+            z-index: 0;
+        }
+        .branding-logo img {
+            width: 500px;
+            height: auto;
+            margin: 180px auto 10px; /* Centering horizontally */
+            display: block; /* Ensure image block-level for centering */
+            transition: opacity 0.3s ease; /* Smooth transition */
+        }
+        img {
+            width: auto;
+            object-fit: cover;
+            flex-shrink: 0; /* Prevent images from shrinking */
+            margin-left: 450px;
+            transition: all 0.3s ease; 
+        }
+        h4 {
+            margin-left: 250px;
+        }
+
+    /*CONTACT*/
+        section.contact {
+            width: auto;
+            height: 400px;
+            background-color: #ffffff; /* Red background */
+            color: #333; /* Dark grey text */
+            padding: 60px 0;
+            position: relative; /* Make the section a positioned element */
+        }  
+        .orange-rectangle {
+            width: 1200px; /* Width of the orange rectangle */
+            height: 60%; /* Make it as tall as the section */
+            background-color: #FFE500; /* Orange background */
+            position: absolute; /* Position it absolutely within the section */
+            right: 0; /* Attach it to the right side */
+            top: 100px; /* Align it to the top */
+        }
+        .white-rectangle {
+            width: 1000px; /* Width of the orange rectangle */
+            height: 20%; /* Make it as tall as the section */
+            background-color: rgb(255, 255, 255); /* Orange background */
+            position: absolute; /* Position it absolutely within the section */
+            right: 0; /* Attach it to the right side */
+            top:180px; /* Align it to the top */
+        }
+        .contact p {
+            font-style: bold;
+            font-weight: bolder;
+            margin: 40px 100px;
+            margin-left:180px;
+            margin-top:205px;
+            font-size: 25px;
+            text-align: left;
+        }
+        .contact ul {
+            font-style: bold;
+            font-weight: bolder;
+            margin-right:60px;
+            margin-top: 20px;
+            font-size: 20px;
+            text-align: right;
+            z-index: 3;
+        }
+
+/*CHARTINTRO*/
+section.chartintro {
+    background: #FFC47F;
+    width: 100%; /* Adjust as needed */
+    height: 100%; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .content-layer {
+    width: 80%; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+    background: rgba(255, 255, 255, 0.28); /* 반투명한 흰색 배경 */
+    padding: 20px;
+    margin-left: 50px ;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .text-content {
+    display: flex;
+    justify-content: space-between; /* Space between columns */
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .left-column, .right-column {
+    width: 45%; /* Adjust width as needed */
+  }
+  .section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+  }
+  .section-text {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #2b2b2b;
+    text-align: left;
+  }
+  .section-subtitle {
+    font-size: 24px;
+    color: #6c6c6c;
+    margin-bottom: 20px;
+  }
+  .chart {
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    background: url('img/chart.png') no-repeat center center;
+    background-size: contain; /* Adjust background size as needed */
+  }
+
+/*CHART1*/
+        section.backgroundmade {
+            width: auto;
+            height: 1000px;
+            background-color: #ffcc80; /* Light orange */
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            width: 100%;
+            padding: 20px 0;
+        }
+        
+        .backgroundmade img {
+            max-width: 15%;
+            height: auto;
+            margin: 10px 10px; /* Adjust spacing between images */
+            margin-bottom: 200px;
+            margin-left: 20px;
+        }
+/*WHYMADE?*/
+        .why {
+            background-color: #FFC47F; /* Different shade of orange */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            padding: 20px 0;
+        }
+
+        .why .image-with-text {
+            display: flex;
+            align-items: flex-start; /* Align items to the start (top) */
+            justify-content: space-between;
+            width: 60%;
+            margin-bottom: 50px; /* Adjust as needed */
+            margin-top: 150px;
+        }
+
+        .why .image-with-text img {
+            max-width: 40%; /* Adjust image width as needed */
+            height: auto;
+            margin-left:10px;
+        }
+
+        .why .image-with-text .text {
+            max-width: 55%; /* Adjust text width as needed */
+            font-size: 18px; /* Adjust font size as needed */
+            text-align: left; /* Align text to the left */
+            color: #fff; /* Text color */
+            margin-left: 10px; /* Add margin between image and text */
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .why .image-with-text {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .why .image-with-text img {
+                max-width: 100%; /* Adjust image width for smaller screens */
+                margin-bottom: 10px; /* Add margin between images */
+            }
+
+            .why .image-with-text .text {
+                max-width: 100%;
+                margin-left: 0; /* Reset margin for smaller screens */
+                margin-top: 10px; /* Add margin between images and text */
+            }
+        }
+
+    /*FOOTER*/
+    footer {
+        width: 105%;
+        background-color: #FF9900;
+        color: #fff;
+        text-align: center;
+        box-sizing: border-box;
+        margin: 0 50px 0 0;
+        padding: 100px 50px;
+    }
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .footer-container .footer-logo img {
+        width: 300px;
+        height: auto;
+        margin-left: 5px;
+        margin-right: 30px;
+    }
+    footer p {
+        margin: 40px 100px;
+        margin-left:120px;
+        font-size: 16px;
+        text-align: left;
+    }
+ 
+ 
+  

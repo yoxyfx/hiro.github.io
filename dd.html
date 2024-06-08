@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview</title>
+  <style>
+    /* CSS styles */
+    @font-face {
+      font-family: 'TmoneyRoundWindRegular';
+      src: url('01_otf/TmoneyRoundWindRegular.otf') format('opentype');
+      font-weight: bolder;
+      font-style: bolder;
+    }
+    body {
+      font-family: 'TmoneyRoundWindRegular', sans-serif;
+      background: #FFC47F; /* 전체 배경을 주황색으로 설정 */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw; /* Viewport width */
+      height: 100vh; /* Viewport height */
+      overflow: hidden;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    section.chartintro {
+      width: 90%; /* Adjust as needed */
+      height: 90%; /* Adjust as needed */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .content-layer {
+      width: 90%; /* Adjust as needed */
+      height: auto; /* Adjust as needed */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 35px;
+      background: rgba(255, 255, 255, 0.28); /* 반투명한 흰색 배경 */
+      padding: 20px;
+    }
+    .text-content {
+      display: flex;
+      justify-content: space-between; /* Space between columns */
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .left-column, .right-column {
+      width: 45%; /* Adjust width as needed */
+    }
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 20px;
+    }
+    .section-text {
+      font-size: 18px;
+      color: #2b2b2b;
+      text-align: right;
+    }
+    .section-subtitle {
+      font-size: 24px;
+      color: #6c6c6c;
+      margin-bottom: 20px;
+    }
+    .chart {
+      width: 100%;
+      height: 400px; /* Adjust height as needed */
+      background: url('img/chart.png') no-repeat center center;
+      background-size: contain; /* Adjust background size as needed */
+    }
+  </style>
+</head>
+<body>
+  <section class="chartintro">
+    <div class="content-layer">
+      <div class="text-content">
+        <div class="left-column">
+          <p class="section-title">
+            <span style="color: orange;">Cause of death</span> <br>in a child safety accident
+          </p>
+          <p class="section-subtitle">“어린이 사망원인 1위는 안전사고”</p>
+        </div>
+        <div class="right-column">
+          <p class="section-text">
+            어린이 안전사고는 통상 가장 안전한 장소로 인식되는 가정에서 가장 많이 발생했고<br>
+            어린이 안전사고 예방을 위한 지식은 크게 부족한 것으로 조사됐다.<br>
+            멈추지 않는 어린이 교통 사고로 어린이 안전교육의 중요성 증가 하였고<br>
+            이를 통해 아이들의 위기대처 능력 필요성 증가하였다.
+          </p>
+        </div>
+      </div>
+      <div class="chart"></div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Define font-face for custom font */
+        @font-face {
+            font-family: 'TmoneyRoundWindRegular';
+            src: url('01_otf/TmoneyRoundWindRegular.otf') format('opentype');
+            font-weight: normal; /* Corrected to normal, as bolder/bold is not standard */
+            font-style: normal; /* Corrected to normal, as bolder/bold is not standard */
+        }
+
+        /* Global styles */
+        body {
+            font-family: 'TmoneyRoundWindRegular', sans-serif;
+            background: var(--background); /* Assuming --background is defined elsewhere */
+            overflow: auto;
+            transition: 0.3s ease-out;
+            overflow-x: hidden;
+            max-width: 100%;
+            width: 100%;
+            overscroll-behavior: none;
+            margin: 0; /* Added to reset default body margin */
+            padding: 0; /* Added to reset default body padding */
+        }
+
+        /* Section specific styles */
+        .section.description {
+            width: auto; /* Adjust as needed */
+            height: 1000px; /* Adjust as needed */
+            background-color: #ffc37fb3; /* White background with transparency */
+            color: #333; /* Dark grey text */
+            padding: 50px 0; /* Padding top and bottom */
+            text-align: center; /* Center align text */
+        }
+    </style>
+</head>
+<body>
+    <section id="description" class="description">
+        <!-- Content for description section goes here -->
+    </section>
+</body>
+</html>

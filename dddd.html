@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview</title>
+  <style>
+    html, body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background: #fff;
+    }
+
+    .background-layer {
+      width: 100%;
+      height: 839px;
+      position: absolute;
+      left: 0;
+      background: rgba(255, 138, 0, 0.22);
+    }
+
+    .main-title {
+      width: 100%;
+      max-width: 1552px;
+      height: 213px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 373px;
+      font-size: 64px;
+      font-weight: 500;
+      text-align: center;
+      color: #000;
+    }
+
+    .app-title {
+      width: 328px;
+      height: 125px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 720px;
+      font-size: 120px;
+      text-align: center;
+      color: #ff7a00;
+      font-weight: 700;
+      background: #fff;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .description {
+      width: 100%;
+      max-width: 860px;
+      height: auto;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 100px;
+      font-size: 20px;
+      font-weight: 300;
+      text-align: center;
+      color: #000;
+      line-height: 1.6;
+      background: #fff;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .section-title-left {
+      width: 138px;
+      height: 34px;
+      position: absolute;
+      left: 132px;
+      top: 310px;
+      font-size: 20px;
+      font-weight: 500;
+      text-align: left;
+      color: #000;
+    }
+
+    .section-title-right {
+      width: 138px;
+      height: 34px;
+      position: absolute;
+      right: 132px;
+      top: 310px;
+      font-size: 20px;
+      font-weight: 500;
+      text-align: right;
+      color: #000;
+    }
+
+    .category-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      height: 50px;
+      position: absolute;
+      font-size: 20px;
+      text-align: center;
+      color: #000;
+      background-color: #ffffff;
+      border: 1px solid #000000;
+      cursor: pointer;
+    }
+
+    .category-box > div {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .category-box > p {
+      margin: 0;
+    }
+
+    .game {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 901.5px;
+      background: #ff7a00;
+      padding: 10px;
+      border-radius: 10px;
+      color: #fff;
+    }
+
+    .ar {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 970.38px;
+      background: #ff7a00;
+      padding: 10px;
+      border-radius: 10px;
+      color: #fff;
+    }
+
+    .3d {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 970.38px;
+      background: #ff7a00;
+      padding: 10px;
+      border-radius: 10px;
+      color: #fff;
+    }
+
+    .safety-education {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 901.5px;
+      background: #ff7a00;
+      padding: 10px;
+      border-radius: 10px;
+      color: #fff;
+    }
+
+    .game-addiction {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 970.38px;
+      background: #ff7a00;
+      padding: 10px;
+      border-radius: 10px;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="background-layer"></div>
+    <p class="main-title">
+      <span>“ 아이들의 안전사고 예방을 위한</span><br />
+      <span>모바일 게임 애플리케이션 “</span>
+    </p>
+    <p class="app-title">HIRO</p>
+    <p class="description">
+      <span>계속 되는 어린이 안전사고, 어린이의 위기대처능력의 증가를 목표로 하는 모바일 게임</span><br />
+      <span>Ar 과 3D를 이용하여 아이들의 재미를 유도하고 재미를 통해 아이들의 집중력을 끌어올리는 방식을 사용</span><br />
+      <span>어린이 안전교육과 아이들의 즐거움 두가지를 한번에 잡을 수 있는 에플리케이션</span>
+    </p>
+    <p class="section-title-left">Application</p>
+    <p class="section-title-right">Planning</p>
+    <div class="category-box game">
+      <div></div>
+      <p>Game</p>
+    </div>
+    <div class="category-box ar">
+      <div></div>
+      <p>AR</p>
+    </div>
+    <div class="category-box 3d">
+      <div></div>
+      <p>3D</p>
+    </div>
+    <div class="category-box safety-education">
+      <div></div>
+      <p>Safety education</p>
+    </div>
+    <div class="category-box game-addiction">
+      <div></div>
+      <p>Prevention of Game Addiction</p>
+    </div>
+  </div>
+</body>
+</html>

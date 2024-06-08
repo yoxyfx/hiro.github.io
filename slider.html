@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS styles */
+        @font-face {
+            font-family: 'TmoneyRoundWindRegular';
+            src: url('01_otf/TmoneyRoundWindRegular.otf') format('opentype');
+            font-weight: bolder;
+            font-style: bolder;
+        }
+        body {
+            font-family: 'TmoneyRoundWindRegular', sans-serif;
+            background: var(--background);
+            overflow: auto;
+            transition: 0.3s ease-out;
+            overflow-x: hidden;
+            max-width: 100%;
+            width: 100%;
+            overscroll-behavior: none;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        /*SCROLL*/
+        .image-container {
+            position: relative;
+            width: 1127px; 
+            height: 624px; /* Adjust height to change card aspect ratio */
+            display: flex;
+            justify-content: flex-start; /* 이미지를 왼쪽으로 정렬 */
+            margin-top: 20px; /* 필요에 따라 여백 조정 */
+            margin-left: 200px;
+            overflow: hidden; /* Prevent GIF overflow */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+        }
+        .image-container img {
+            height: auto;
+            width: 100%;
+            object-fit: cover; /* Maintain aspect ratio and cover container */
+            z-index: 1; /* Ensure images are behind GIFs */
+            border-radius: 10px; /* Rounded corners */
+        }
+        .image-container img.gif-overlay {
+            position: absolute;
+            top: 0;
+            left: -15%;
+            width: 80%; /* Reduce width of the GIF overlay */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: cover;
+            z-index: 2; /* Ensure GIFs are above images */
+            pointer-events: none; /* Ensure GIFs don't interfere with clicks */
+            transform: translateX(-100px); /* Move GIF slightly to the left */
+        }
+        #sectionPin {
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            left: 0;
+            background: rgb(255, 255, 255);
+            color: var(--bg-color);
+        }
+        .pin-wrap {
+            display: flex;
+            width: 900vw; /* Adjust width as per your content */
+            height: 1000px;
+            margin-top: 100px;
+        }
+        .pin-wrap img{
+            display: flex;
+            width: 1127px;
+            height: 624px;
+            overflow-x: auto; /* Enable horizontal scrolling */
+        }
+        .pin-wrap > * {
+            min-width: 30vw; /* Adjust as needed */
+            flex-shrink: 0; /* Prevent child elements from shrinking */
+        }
+        .after-pin {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e3857a;
+            color: #f1dba7;
+        }
+
+        /*VIDEO*/
+        section.video {
+            width: auto;
+            height: 1000px;
+            background-color:  rgba(255, 245, 0, 0.8); /* Gold background */
+            color: #333; /* Dark grey text */
+            padding: 50px 0;
+        }
+        .video {
+            width: auto;
+            height: 2000px;
+            background-color:  rgba(255, 245, 0, 0.8); /* Gold background */
+            color: #333; /* Dark grey text */
+            padding: 50px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }  
+        .video-container {
+            width: auto;
+            max-width: 1000px;
+            background-color: #000;
+            padding: 10px;
+            margin-top: 200px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: auto;
+            margin-left: 50px;
+            align-self: center; /* 가로 중앙 정렬 */
+        }
+        .video-player {
+            width: 100%;
+            height: 600px; /* Adjust height as needed */
+            object-fit: cover;
+        }
+        /* Media query for responsiveness */
+        @media (max-width: 768px) {
+            .video-player {
+                height: 300px; /* Adjust height for smaller screens */
+            }
+        }
+        
+    </style>
+</head>
+<body>
+  <!--SCROLL-->
+<div class="horizontal"> 
+    <section id="sectionPin" class="sectionPin">
+        <div class="pin-wrap">
+            <div class="image-container">
+                <img src="img/character/이루1.png" alt="">
+                <img class="gif-overlay" src="img/햄1.gif" alt="">
+            </div>
+            <div class="image-container">
+                <img src="img/character/히로1.png" alt="">
+                <img class="gif-overlay" src="img/히로1.gif" alt="">
+            </div>
+        </div>
+    </section>
+</div>
+
+<!--VIDEO-->
+<section id="video" class="video">
+    <div class="container">  
+    </div>
+    <div class="video-container">
+      <video class="video-player" controls>
+          <source src="img/영상1.mp4" type="video/mp4">
+      </video>
+  </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/gsap/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
+<script>
+    /* SCROLL */
+    $(document).ready(function(){
+    $("a.scroll-link").on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function(){
+                window.location.hash = hash;
+            });
+        }
+    });
+});
+
+gsap.registerPlugin(ScrollTrigger);
+
+const pageContainer = document.querySelector(".container");
+
+// Locomotive Scroll 초기화
+const scroller = new LocomotiveScroll({
+    el: pageContainer,
+    smooth: true
+});
+gsap.to(".pin-wrap", {
+scrollTrigger: {
+    trigger: "#sectionPin",
+    start: "top top",
+    end: () => "+=" + document.querySelector(".pin-wrap").scrollWidth - window.innerWidth,
+    scrub: true,
+    pin: true,
+    anticipatePin: 1
+},
+x: -(document.querySelector(".pin-wrap").scrollWidth - window.innerWidth),
+ease: "none"
+});
+
+scroller.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy(pageContainer, {
+    scrollTop(value) {
+        return arguments.length
+            ? scroller.scrollTo(value, 0, 6000)
+            : scroller.scroll.instance.scroll.y;
+    },
+    getBoundingClientRect() {
+        return {
+            left: 0,
+            top: 0,
+            width: window.innerWidth,
+            height: window.innerHeight
+        };
+    },
+    pinType: pageContainer.style.transform ? "transform" : "fixed"
+});
+
+window.addEventListener("load", function () {
+    let pinWrap = document.querySelector(".pin-wrap");
+    let pinWrapWidth = pinWrap.scrollWidth;
+    let horizontalScrollLength = pinWrapWidth - window.innerWidth;
+
+    // Pinning and horizontal scrolling
+    gsap.to(".pin-wrap", {
+        scrollTrigger: {
+            scroller: pageContainer, // locomotive-scroll
+            scrub: true,
+            trigger: "#sectionPin",
+            start: "top top",
+            end: () => "+=" + horizontalScrollLength,
+            onLeaveBack: () => scroller.scrollTo(0) // Move to the next section after horizontal scroll ends
+        },
+        x: -horizontalScrollLength,
+        ease: "none"
+    });
+
+    ScrollTrigger.addEventListener("refresh", () => scroller.update()); // locomotive-scroll
+
+    ScrollTrigger.refresh();
+});
+</script>
+</body>
+</html>
