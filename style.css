@@ -24,17 +24,19 @@ body {
 /* logo */
 .logo {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 40px;
+    left: 30px;
     z-index: 1000; /* 다른 콘텐츠 위에 로고가 표시되도록 z-index 설정 */
     }
     
     .logo img {
-    width: 300px;
+    width: 200px;
     height: auto;
     margin-left: 10px;
     }
-    
+    .logo img:hover {
+        content: url('img/HIROON.png'); /* 마우스 오버 시 이미지 변경 */
+    }
 /* intro */
     .introcontainer {
         display: flex;
@@ -42,9 +44,10 @@ body {
         align-items: center;
         justify-content: center;
         background-image: url('img/bgorange.png');
+        background-repeat: no-repeat;
         background-size: cover;
-        background-position: center;
         background-attachment: fixed;
+        background-position: center;
         height: 110vh;
         width: 100vw;
         margin-left: 0px;
@@ -60,10 +63,11 @@ body {
     .title {
         font-size: 100px;
         color: #fff;
-        font-weight: bold;
+        font-weight: bolder;
         animation: wave 0.6s ease-in-out forwards, jump 0.8s ease-in-out forwards;
         position: relative;
         opacity: 0;
+        margin-left: -3px;
         display: inline-block;
     }
     
@@ -155,7 +159,7 @@ body {
         width: 120px;
         height: 1000px; /* Increased height */
         top: 58%;
-        left: 3.1%;
+        left: 2.5%;
         transform: translateY(-50%);
         background-image: url('img/navbg.png');
         background-size: 100% 60%; /* Ensures the entire image is visible */
@@ -195,9 +199,15 @@ body {
         width: auto;
         height: 900px;
         color: #fff; /* White text */
+        background-attachment: fixed;
         padding: 50px 0;
+        margin-bottom: 500px;
     }
         #draggable {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
             position: relative; /* Allow positioning with top/left */
             border: 2px solid #aaa;
             transition: transform 0.2s ease-in-out; /* Apply transition effect */
@@ -214,11 +224,12 @@ body {
     /*시놉시스*/ 
     section.timeline {
         width: auto;
-        height: 6000px;
+        height: 4000px;
         background-image: url('img/bgorange.png');
+        background-repeat: no-repeat;
         background-size: cover;
-        background-position: center;
         background-attachment: fixed;
+        background-position: center;
         color: #333; /* Dark grey text */
         padding: 50px 0;
         z-index: 2;
@@ -341,11 +352,11 @@ body {
    /*SCROLL*/
    .image-container {
     position: relative;
-    width: calc(100% - 200px); /* 부모 요소 너비에서 200px을 뺀 값으로 설정 */
+    width: calc(100% - 500px); /* 부모 요소 너비에서 200px을 뺀 값으로 설정 */
     height: 624px; /* 카드의 높이를 원하는 값으로 설정 */
     display: flex;
     justify-content: flex-start; /* 이미지를 왼쪽으로 정렬 */
-    margin-left: -100px; /* 왼쪽 여백을 100px로 설정 */
+    margin-left: -200px; /* 왼쪽 여백을 100px로 설정 */
     margin-top: 20px; /* 상단 여백을 필요에 따라 조정 */
     overflow: hidden; /* 이미지를 컨테이너 내에서 자르지 않도록 설정 */
 }
@@ -360,14 +371,12 @@ body {
 .image-container img.gif-overlay {
     position: absolute;
     top: 50%; /* 이미지의 세로 중앙에 위치하도록 설정 */
-    left: 5%; /* 상대적으로 왼쪽에 배치 */
-    width: 15%; /* GIF 오버레이의 너비를 이미지의 일부로 설정 */
+    left: 8%; /* 상대적으로 왼쪽에 배치 */
+    width: 20%; /* GIF 오버레이의 너비를 이미지의 일부로 설정 */
     transform: translate(-50%, -50%); /* 세로와 가로 중앙에 정렬 */
     z-index: 2; /* GIF가 이미지 위에 나타나도록 설정 */
     pointer-events: none; /* GIF가 클릭 이벤트를 방해하지 않도록 설정 */
 }
-
-
 
 
 
@@ -409,13 +418,19 @@ body {
         width: auto;
         height: 1000px;
         background-color:  rgba(255, 245, 0, 0.8); /* Gold background */
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
         color: #333; /* Dark grey text */
         padding: 50px 0;
+        margin-top: 500px;
     }
     .video {
         width: auto;
         height: 2000px;
         background-color:  rgba(255, 245, 0, 0.8); /* Gold background */
+        
         color: #333; /* Dark grey text */
         padding: 50px 0;
         display: flex;
@@ -447,11 +462,15 @@ body {
     }
     
     /*MAINPAGE DESCIPTION*/
-    section.mainpage {
+   /* section.mainpage {
         width: auto;
         height: 1000px;
         background-color: rgb(255, 255, 255); 
-        color: #fff; /* White text */
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        color: #fff;
         padding: 50px 0;
     }
     section.mainpage.ul{
@@ -462,54 +481,224 @@ body {
         margin-top: 100px;
     }
     .orangeright {
-        width: 1000px; /* Width of the orange rectangle */
-        height: 60%; /* Make it as tall as the section */
-        background-color: #FF9900; /* Orange background */
-        position: absolute; /* Position it absolutely within the section */
-        right: 0; /* Attach it to the right side */
+        width: 1000px; 
+        height: 60%; 
+        background-color: #FF9900; 
+        position: absolute; 
+        right: 0; 
         margin-top: 60px;   
-    }
+    }*/
     
     /*USERPAGE DESCRIPTION*/
+    /*
     section.userpage {
         width: auto;
         height: 900px;
         background-color:rgb(253, 220, 54); 
         background-image: url('img/bgyellow.png');
+        background-repeat: no-repeat;
         background-size: cover;
-        background-position: center;
         background-attachment: fixed;
-        color: #fff; /* White text */
+        background-position: center;
+        color: #fff; 
         padding: 50px 0;
     }
     .orangeleft {
-        width: 1200px; /* Width of the orange rectangle */
-        height: 60%; /* Make it as tall as the section */
-        background-color: #FF9900; /* Orange background */
-        position: absolute; /* Position it absolutely within the section */
-        left: 0; /* Attach it to the right side */
+        width: 1200px; 
+        height: 60%; 
+        background-color: #FF9900; 
+        position: absolute;
+        left: 0; 
         margin-top: 60px;
         
     }
     .whiteright {
-        width: 620px; /* Width of the orange rectangle */
-        height: 60%; /* Make it as tall as the section */
-        background-color: rgb(255, 255, 255); /* Orange background */
-        position: absolute; /* Position it absolutely within the section */
-        right: 0; /* Attach it to the right side */
+        width: 620px; 
+        height: 60%; 
+        background-color: rgb(255, 255, 255); 
+        position: absolute; 
+        right: 0;
         margin-top: 60px;
         
-    }
+    }*/
+/*PLAYGAME*/
+section.playgame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
 
+.item {
+    width: 200px;
+    height: 200px;
+    list-style-type: none;
+    position: absolute;
+    top: 72%;
+    margin-right: 20px;
+    transform: translateY(0%);
+    transform: translateX(45%);
+    z-index: 1;
+    background-position: center;
+    background-size: 1800px 833px;
+    border-radius: 20px;
+    box-shadow: 0 20px 30px rgba(255,255,255,0.3) inset;
+    transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+    right: calc(100% - 200px); /* Move to the right end */
+    background-repeat: no-repeat;
+}
+
+.item:nth-child(1), .item:nth-child(2) {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+}
+
+.item:nth-child(3) { left: 50%; }
+.item:nth-child(4) { left: calc(50% + 220px); }
+.item:nth-child(5) { left: calc(50% + 440px); }
+.item:nth-child(6) { left: calc(50% + 660px); opacity: 0; }
+
+.content {
+    width: min(20vw,200px);
+    position: absolute;
+    top: 50%;
+    left: 3rem;
+    transform: translateY(-50%);
+    font: 400 0.85rem helvetica,sans-serif;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+    opacity: 0;
+    display: none;
+}
+
+.content .title {
+    font-family: 'arial-black';
+    text-transform: uppercase;
+}
+
+.content .description {
+    line-height: 1.7;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.8rem;
+}
+
+.content button {
+    width: fit-content;
+    background-color: rgba(0,0,0,0.1);
+    color: white;
+    border: 2px solid white;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    cursor: pointer;
+}
+
+.item:nth-of-type(2) .content {
+    display: block;
+    animation: show 0.75s ease-in-out 0.3s forwards;
+}
+
+@keyframes show {
+    0% {
+        filter: blur(5px);
+        transform: translateY(calc(-50% + 75px));
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.navigation {
+    position: absolute;
+    bottom: 2rem;
+    right: -70%;
+    transform: translateX(-50%);
+    z-index: 5;
+    user-select: none;
+    margin-right: 20px;
+}
+
+.navigation .button {
+    background-color: rgba(255,255,255,0.5);
+    color: rgba(0,0,0,0.7);
+    border: 2px solid rgba(0,0,0,0.6);
+    padding: 0.75rem;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 100px;
+    margin-right: 550px;
+}
+
+.navigation .button:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+.prev-button {
+    left: calc(50% - 100px);
+}
+
+.next-button {
+    left: calc(50% + 400px);
+}
+
+.image-between-arrows {
+    position: absolute;
+    top: 55%;
+    left: calc(50% - 10px);
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+@media (width > 650px) and (width < 900px) {
+    .content .title { font-size: 1rem; }
+    .content .description { font-size: 0.7rem; }
+    .content button { font-size: 0.7rem; }
+    
+    .item {
+        width: 160px;
+        height: 270px;
+    }
+    
+    .item:nth-child(3) { left: 50%; }
+    .item:nth-child(4) { left: calc(50% + 170px); }
+    .item:nth-child(5) { left: calc(50% + 340px); }
+    .item:nth-child(6) { left: calc(50% + 510px); opacity: 0; }
+}
+
+@media (width < 650px) {
+    .content .title { font-size: 0.9rem; }
+    .content .description { font-size: 0.65rem; }
+    .content button { font-size: 0.7rem; }
+    
+    .item {
+        width: 130px;
+        height: 220px;
+    }
+    
+    .item:nth-child(3) { left: 50%; }
+    .item:nth-child(4) { left: calc(50% + 140px); }
+    .item:nth-child(5) { left: calc(50% + 280px); }
+    .item:nth-child(6) { left: calc(50% + 420px); opacity: 0; }
+}
     /*STORE*/
     section.store {
         width: auto;
         height: 1100px;
         background-color: #949494; 
         background-image: url('img/bgwhite.png');
+        background-repeat: no-repeat;
         background-size: cover;
-        background-position: center;
         background-attachment: fixed;
+        background-position: center;
         color: #fff; /* White text */
         padding: 50px 0;
         z-index: 1;
@@ -553,24 +742,32 @@ body {
             height: 1000px;
             background-color: #fff; /* White background */
             color: #333; /* Dark grey text */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
             padding: 50px 0;
             z-index: 0;
         }
         .branding-logo img {
-            width: 500px;
+            width: 300px;
             height: auto;
             margin: 180px auto 10px; /* Centering horizontally */
             display: block; /* Ensure image block-level for centering */
             transition: opacity 0.3s ease; /* Smooth transition */
         }
         img {
-            width: auto;
+            width: 800px;
             object-fit: cover;
             flex-shrink: 0; /* Prevent images from shrinking */
             margin-left: 450px;
             transition: all 0.3s ease; 
         }
+        section.branding img:hover {
+            content: url('img/HIROON.png'); /* 마우스 오버 시 이미지 변경 */
+        }
         h4 {
+            font-size: 20px;
             margin-left: 250px;
         }
 
@@ -673,6 +870,7 @@ section.chartintro {
     height: 400px; /* Adjust height as needed */
     background: url('img/chart.png') no-repeat center center;
     background-size: contain; /* Adjust background size as needed */
+    
   }
 
 /*CHART1*/

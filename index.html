@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <!-- 로고 -->
     <div class="logo">
         <a href="index.html">
-            <img src="img/logo.png" alt="Logo">
+            <img src="img/HIROOFF.png" alt="Logo">
         </a>
     </div>
 <!-- 인트로 -->
@@ -23,8 +23,12 @@
                 <span class="title"></span>
                 <span class="title"></span>
                 <span class="title"></span>
+                <span class="title"></span>
+                <span class="title"> </span>
                 <span class="title">함</span>
                 <span class="title">께</span>
+                <span class="title"></span>
+                <span class="title"></span>
                 <span class="title"></span>
                 <span class="title"></span>
                 <span class="title"></span>
@@ -38,6 +42,8 @@
                 <span class="title">전</span>
                 <span class="title">하</span>
                 <span class="title">게</span>
+                <span class="title"></span>
+                <span class="title"></span>
                 <span class="title"></span>
                 <span class="title"></span>
                 <span class="title"></span>
@@ -156,21 +162,85 @@
   </div>
 </section>
 <!-- MAINPAGE DESCRIPTION-->
+ <!--
 <section id="mainpage" class="mainpage">
-    <ul>
-        <span>Planning: Seo Yeon-woo, Design: Kyungjin Lee, Programming: Seunghyun Im</span>
-      </ul>
         <div class="orangeright">
         </div> 
 </section>
 
+ -->
+
 <!--USERPAGE-->
+<!--
 <section id="userpage" class="userpage">
     <div class="orangeleft"></div> 
     <div class="whiteright"></div> 
   </section>
 
-<!--STORE-->
+
+<!-STORE-->
+<section class="playgame">
+    <ul class='slider'>
+        <li class='item' style="background-image: url('img/gameplay1.png')">
+            <div class='content'>
+                <h2 class='title'>"Lossless Youths"</h2>
+                <p class='description'> Lorem ipsum, dolor sit amet consectetur
+                adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+                praesentium nisi. Id laboriosam ipsam enim.  </p>
+              
+            </div>
+        </li>
+        <li class='item' style="background-image: url('img/gameplay1.png')">
+            <div class='content'>
+                <h2 class='title'>"Estrange Bond"</h2>
+                <p class='description'> Lorem ipsum, dolor sit amet consectetur
+                adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+                praesentium nisi. Id laboriosam ipsam enim.  </p>
+             
+            </div>
+        </li>
+        <li class='item' style="background-image: url('img/gameplay2.png')">
+            <div class='content'>
+                <h2 class='title'>"The Gate Keeper"</h2>
+                <p class='description'> Lorem ipsum, dolor sit amet consectetur
+                adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+              
+            </div>
+        </li>
+        <li class='item' style="background-image: url('img/gameplay2.png')">
+            <div class='content'>
+                <h2 class='title'>"Last Trace Of Us"</h2>
+                <p class='description'>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
+                </p>
+           
+            </div>
+        </li>
+        <li class='item' style="background-image: url('img/gameplay3.png')">
+            <div class='content'>
+                <h2 class='title'>"Urban Decay"</h2>
+                <p class='description'>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
+                </p>
+     
+            </div>
+        </li>
+        <li class='item' style="background-image: url('img/gameplay3.png')">
+            <div class='content'>
+                <h2 class='title'>"The Migration"</h2>
+                <p class='description'> Lorem ipsum, dolor sit amet consectetur
+                adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+                praesentium nisi. Id laboriosam ipsam enim.  </p>
+
+            </div>
+        </li>
+    </ul>
+    <div class='navigation'>
+        <ion-icon class='button prev-button' name="arrow-back-outline"></ion-icon>
+        <ion-icon class='button next-button' name="arrow-forward-outline"></ion-icon>
+    </div>
+</section>
+
 <section id="store" class="store">
     <h3>악세서리를 올려보세요</h3>
     <div id="result">악세서리를 올려보세요!</div>
@@ -184,9 +254,9 @@
 
 <!--BRANDING-->
 <section id="branding" class="branding"> 
-    <img src="img/HIRONON.png" alt="Original Image">
+    <img src="img/HIROOFF.png" alt="Original Image">
     <h4>흔히 안전한 장소라 인식되는 장소에서, 사실은 안전사고가 굉장히 빈번한다는 사실을 알고 계시나요? 
-        어떻게 하면 안전교육을 재밌고 더 쉽게 할 수 있을까 고민하는 과정에서 탄생했습니다!</h4>
+        어떻게 하면 안전교육을 재밌고 더 쉽게 할 수 있을까<br>고민하는 과정에서 탄생했습니다!</h4>
 </section>
 
 <!--CHARTINTRO-->
@@ -352,7 +422,7 @@
         ScrollTrigger.scrollerProxy(pageContainer, {
             scrollTop(value) {
                 return arguments.length
-                    ? scroller.scrollTo(value, 0, 6000)
+                    ? scroller.scrollTo(value, 0, 3200)
                     : scroller.scroll.instance.scroll.y;
             },
             getBoundingClientRect() {
@@ -389,6 +459,20 @@
         
             ScrollTrigger.refresh();
         });
+       </script>
+       <!--PLAYGAME-->
+       <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+       <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+       <script>
+           const slider = document.querySelector('.slider');
+   
+           function activate(e) {
+               const items = document.querySelectorAll('.item');
+               e.target.matches('.next-button') && slider.append(items[0])
+               e.target.matches('.prev-button') && slider.prepend(items[items.length-1]);
+           }
+   
+           document.addEventListener('click', activate, false);
        </script>
 
        <!-- STORE-->
