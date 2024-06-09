@@ -242,14 +242,19 @@
 </section>
 
 <section id="store" class="store">
-    <h3>악세서리를 올려보세요</h3>
-    <div id="result">악세서리를 올려보세요!</div>
-    <div class="answer-box">
-      <div class="answer a" style="background-image: url('img/item1.png');"></div>
-      <div class="answer b" style="background-image: url('img/item2.png');"></div>
-      <div class="answer c" style="background-image: url('img/item3.png');"></div>
-      <div class="answer d" style="background-image: url('img/item4.png');"></div>
+    <div class="putitem">
+        <img id="mainImage" src="img/base.png" alt="Store Item">
+        
+    <div class="clickable-area top-left" onclick="changeImage('img/outfit1.png')"></div>
+    <div class="clickable-area top-center" onclick="changeImage('img/outfit2.png')"></div>
+    <div class="clickable-area top-right" onclick="changeImage('img/outfit3.png')"></div>
+    <div class="clickable-area bottom-left" onclick="changeImage('img/outfit4.png')"></div>
     </div>
+
+    <div class="puton">
+        <img src="img/옷을 클릭하여 히로에게 옷을 입혀주세요!.png" alt="Instruction">
+    </div>
+
 </section>
 
 <!--BRANDING-->
@@ -479,55 +484,10 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
 <script>
-  $(() => {
-    $(".answer").draggable({
-      revertDuration: 0 // 드래그된 요소가 되돌아갈 때의 애니메이션 지속시간 설정
-    });
-
-    $("#result").droppable({
-      accept: ".answer", // 모든 .answer 요소를 droppable로 수락
-      drop: function(event, ui) {
-        let className = ui.helper.attr("class").split(' ')[1];
-        let message;
-        let bgImage;
-
-        switch (className) {
-          case 'a':
-            bgImage = 'url("img/bg1.png")';
-            message = '악세서리!';
-            break;
-          case 'b':
-          bgImage = 'url("img/bg2.png")';
-            message = '악세서리!';
-            break;
-          case 'c':
-          bgImage = 'url("img/bg3.png")';
-            message = '옷입니다!';
-            break;
-          case 'd':
-          bgImage = 'url("img/bg4.png")';
-            message = '악세서리!';
-            break;
-          default:
-          bgImage = 'url("img/bg.png")';
-            message = '악세서리를 올리세요!';
-        }
-
-        $(this)
-          .css('background-image', bgImage)
-          .html(message);
-
-        // 드롭된 요소가 다시 드래그 가능하게 설정
-        ui.helper.draggable('option', 'revert', false);
-      },
-      out: function(event, ui) {
-        // 드래그된 요소가 droppable 영역을 벗어났을 때 초기 상태로 돌아감
-        $(this)
-          .css('background-image', 'none')
-          .html('악세서리를 올리세요');
-      }
-    });
-  }); 
+    function changeImage(src) {
+        document.getElementById('mainImage').src = src;
+    }
+</script>
 </script>
 
 </body>
