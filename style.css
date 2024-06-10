@@ -772,6 +772,7 @@ section.playgame {
         display: grid;
         place-items: center;
         overflow: hidden;
+        margin-left: 50px;
     }
     
     .putitem img {
@@ -812,7 +813,7 @@ section.playgame {
         left: 20%;
     }
     .puton img{
-        margin-left: 100px;
+        margin-left: 40px;
         margin-top: -250px; /* 더 위로 조정 */
         width: 600px;
         height: auto;
@@ -831,7 +832,7 @@ section.playgame {
             z-index: 0;
         }
         .branding-logo img {
-            max-width: 50%;
+            max-width: 100%;
             height: auto;
             margin: 180px auto 10px; /* Centering horizontally */
             display: block; /* Ensure image block-level for centering */
@@ -844,12 +845,20 @@ section.playgame {
             margin-left: 300px;
             transition: all 0.3s ease; 
         }
+        section.branding img{
+            width:800px;
+            height:auto;
+            margin-left: 30%;
+        }
         section.branding img:hover {
             content: url('img/HIROON.png'); /* 마우스 오버 시 이미지 변경 */
         }
         h4 {
+            width: 1000px;
+            height: auto;
             font-size: 20px;
-            margin-left: 250px;
+            margin-left: 390px;
+            text-align: center;
         }
 
     /*CONTACT*/
