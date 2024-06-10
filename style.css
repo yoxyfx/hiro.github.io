@@ -972,8 +972,8 @@ section.chartintro {
     
   .background img {
     justify-content: center;
-    width: 100%; /* Adjust as needed */
-    height: 100%; /* Adjust as needed */
+    width: 102%; /* Adjust as needed */
+    height: 102%; /* Adjust as needed */
     margin-left:0%;
 }
 /*CHART1*/
@@ -991,8 +991,8 @@ section.chartintro {
         
         .backgroundmade img {
                 justify-content: center;
-                width: 100%; /* Adjust as needed */
-                height: 100%; /* Adjust as needed */
+                width: 102%; /* Adjust as needed */
+                height: 102%; /* Adjust as needed */
                 margin-left:0%;
         }
 /*WHYMADE?*/
@@ -1006,8 +1006,8 @@ section.chartintro {
         }
         .why img {
             justify-content: center;
-            width: 100%; /* Adjust as needed */
-            height: 100%; /* Adjust as needed */
+            width: 102%; /* Adjust as needed */
+            height: 102%; /* Adjust as needed */
             margin-left:0%;
     }
         .why .image-with-text {
