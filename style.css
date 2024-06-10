@@ -490,12 +490,19 @@ body {
     max-width: 1920px;
     overflow: hidden;
     position: relative;
+    background-color: rgb(255, 255, 255); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .slides {
     display: flex;
     width: 300%; /* 세 개의 슬라이드가 연속으로 보이게 설정 */
     animation: slide 9s infinite;
+    margin-top:250px;
+    margin-bottom:100px;
 }
 
 .slide {
@@ -752,8 +759,8 @@ section.playgame {
       section.store {
         width: auto;
         height: 1100px;
-        background-color: #949494; 
-        background-image: url('img/bgwhite.png');
+        background-color: #ffffff; 
+        /*background-image: url('img/bgwhite.png');*/
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -899,6 +906,13 @@ section.chartintro {
     justify-content: center;
     align-items: center;
   }
+  section.chartintro img {
+    justify-content: center;
+    width: 100%; /* Adjust as needed */
+    height: 100%; /* Adjust as needed */
+    margin-left:0%;
+  
+  }
   .content-layer {
     width: 80%; /* Adjust as needed */
     height: auto; /* Adjust as needed */
@@ -946,7 +960,13 @@ section.chartintro {
     background-size: contain; /* Adjust background size as needed */
     
   }
-
+    
+  .background img {
+    justify-content: center;
+    width: 100%; /* Adjust as needed */
+    height: 100%; /* Adjust as needed */
+    margin-left:0%;
+}
 /*CHART1*/
         section.backgroundmade {
             width: auto;
@@ -957,14 +977,14 @@ section.chartintro {
             align-items: flex-end;
             width: 100%;
             padding: 20px 0;
+            margin-top:-10px;
         }
         
         .backgroundmade img {
-            max-width: 15%;
-            height: auto;
-            margin: 10px 10px; /* Adjust spacing between images */
-            margin-bottom: 200px;
-            margin-left: 20px;
+                justify-content: center;
+                width: 100%; /* Adjust as needed */
+                height: 100%; /* Adjust as needed */
+                margin-left:0%;
         }
 /*WHYMADE?*/
         .why {
@@ -975,7 +995,12 @@ section.chartintro {
             width: 100%;
             padding: 20px 0;
         }
-
+        .why img {
+            justify-content: center;
+            width: 100%; /* Adjust as needed */
+            height: 100%; /* Adjust as needed */
+            margin-left:0%;
+    }
         .why .image-with-text {
             display: flex;
             align-items: flex-start; /* Align items to the start (top) */
