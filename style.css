@@ -1060,7 +1060,7 @@ section.chartintro {
        /
         }
         .persona img{
-            width:115%;
+            width:100%;
             height: auto;
             margin-left:0%;
         }
@@ -1091,7 +1091,7 @@ section.chartintro {
             pointer-events: auto; /* Enable interaction */
         }
         .hirophone img{
-            width:115%;
+            width:103%;
             height: auto;
             margin-left: 0%;
             margin-bottom:-10px;
