@@ -79,14 +79,14 @@
         </ul>
     </nav>
 <!--chapter 나중에 3d로 바꿔-->
+
     <section id="main" class="main">
-        <div id="draggable">
-          <img src="img/mainimg.png">
-      </div>
-          <div class="container">
-              <h2>MAIN</h2>
-          </div>
-      </section>
+        <div class="chapter">
+            <img src="img/mainbackground.gif">
+        </div>
+    </section>
+
+   
 <!--시놉시스-->
 <section id="timeline" class="timeline">
     <ul>
@@ -137,7 +137,7 @@
     </ul>
 </section>
  <!--SCROLL-->
- <div class="horizontal"> 
+ 
     <section id="sectionPin" class="sectionPin">
         <div class="pin-wrap">
             <div class="image-container">
@@ -179,67 +179,17 @@
 
 
 <!-STORE-->
-<section class="playgame">
-    <ul class='slider'>
-        <li class='item' style="background-image: url('img/gameplay1.png')">
-            <div class='content'>
-                <h2 class='title'>"Lossless Youths"</h2>
-                <p class='description'> Lorem ipsum, dolor sit amet consectetur
-                adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
-                praesentium nisi. Id laboriosam ipsam enim.  </p>
-              
-            </div>
-        </li>
-        <li class='item' style="background-image: url('img/gameplay1.png')">
-            <div class='content'>
-                <h2 class='title'>"Estrange Bond"</h2>
-                <p class='description'> Lorem ipsum, dolor sit amet consectetur
-                adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
-                praesentium nisi. Id laboriosam ipsam enim.  </p>
-             
-            </div>
-        </li>
-        <li class='item' style="background-image: url('img/gameplay2.png')">
-            <div class='content'>
-                <h2 class='title'>"The Gate Keeper"</h2>
-                <p class='description'> Lorem ipsum, dolor sit amet consectetur
-                adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
-              
-            </div>
-        </li>
-        <li class='item' style="background-image: url('img/gameplay2.png')">
-            <div class='content'>
-                <h2 class='title'>"Last Trace Of Us"</h2>
-                <p class='description'>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
-                </p>
-           
-            </div>
-        </li>
-        <li class='item' style="background-image: url('img/gameplay3.png')">
-            <div class='content'>
-                <h2 class='title'>"Urban Decay"</h2>
-                <p class='description'>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
-                </p>
-     
-            </div>
-        </li>
-        <li class='item' style="background-image: url('img/gameplay3.png')">
-            <div class='content'>
-                <h2 class='title'>"The Migration"</h2>
-                <p class='description'> Lorem ipsum, dolor sit amet consectetur
-                adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
-                praesentium nisi. Id laboriosam ipsam enim.  </p>
 
+    <section id="sectionPinNew" class="sectionPinNew">
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="img/gameplay1.png" alt="Image 1"></div>
+                <div class="slide"><img src="img/gameplay2.png" alt="Image 2"></div>
+                <div class="slide"><img src="img/gameplay3.png" alt="Image 3"></div>
             </div>
-        </li>
-    </ul>
-    <div class='navigation'>
-        <ion-icon class='button prev-button' name="arrow-back-outline"></ion-icon>
-        <ion-icon class='button next-button' name="arrow-forward-outline"></ion-icon>
-    </div>
-</section>
+        </div>
+    </section>
+
 
 <section id="store" class="store">
     <div class="putitem">
@@ -350,6 +300,8 @@
     <script src="https://unpkg.com/gsap/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
       <script src="script.js"></script>
       <script>
          /* TIMELINE */
@@ -384,6 +336,89 @@
             window.addEventListener("scroll", callbackFunc);
         })();
     </script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+<script>
+    $( () => {
+        let isDragging = false;
+
+        // Initialize draggable on section.main
+        $( ".chapter" ).draggable({
+            axis: "x", // Only drag horizontally
+            containment: "parent",
+            cursor: "move",
+            start: function() {
+                isDragging = true;
+                $( this ).removeClass('hovered'); // Remove hover effect when dragging starts
+            },
+            stop: function() {
+                isDragging = false;
+                if ($( this ).hasClass('hovered')) {
+                    $( this ).removeClass('hovered'); // Ensure hover effect is removed if it persists after dragging
+                }
+            }
+        });
+
+        // Hover effect handling
+        $( ".chapter" ).hover(
+            function() {
+                if (!isDragging) {
+                    $( this ).addClass('hovered'); // Add class for hover effect if not dragging
+                }
+            },
+            function() {
+                if (!isDragging) {
+                    $( this ).removeClass('hovered'); // Remove class if not dragging
+                }
+            }
+        );
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+    // Function to check if an element is in viewport
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    // Function to play or pause gif based on visibility
+    function toggleGifPlay() {
+        var gif = $(".chapter img")[0]; // Selecting the first img element within .chapter
+        if (isElementInViewport(gif)) {
+            var isHovered = $(".chapter").hasClass('hovered');
+            if (!isHovered) {
+                $(".chapter").addClass('hovered');
+                gif.src = gif.src; // Resetting gif by changing its src
+            }
+        } else {
+            $(".chapter").removeClass('hovered');
+        }
+    }
+
+    // Initial check on page load
+    toggleGifPlay();
+
+    // Check on scroll
+    $(window).scroll(function() {
+        toggleGifPlay();
+    });
+});
+
+</script>
+
        <script>
             /* SCROLL */
             $(document).ready(function(){
@@ -427,7 +462,7 @@
         ScrollTrigger.scrollerProxy(pageContainer, {
             scrollTop(value) {
                 return arguments.length
-                    ? scroller.scrollTo(value, 0, 3200)
+                    ? scroller.scrollTo(value, 0, 3000)
                     : scroller.scroll.instance.scroll.y;
             },
             getBoundingClientRect() {
@@ -465,20 +500,10 @@
             ScrollTrigger.refresh();
         });
        </script>
-       <!--PLAYGAME-->
-       <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-       <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-       <script>
-           const slider = document.querySelector('.slider');
-   
-           function activate(e) {
-               const items = document.querySelectorAll('.item');
-               e.target.matches('.next-button') && slider.append(items[0])
-               e.target.matches('.prev-button') && slider.prepend(items[items.length-1]);
-           }
-   
-           document.addEventListener('click', activate, false);
-       </script>
+  
+
+
+
 
        <!-- STORE-->
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -488,7 +513,7 @@
         document.getElementById('mainImage').src = src;
     }
 </script>
-</script>
+
 
 </body>
 </html>
