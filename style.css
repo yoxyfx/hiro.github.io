@@ -490,7 +490,7 @@ body {
     max-width: 1920px;
     overflow: hidden;
     position: relative;
-    background-color: rgb(255, 255, 255); 
+    background-color: rgb(255, 255, 255);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -499,20 +499,23 @@ body {
 
 .slides {
     display: flex;
-    width: 300%; /* 세 개의 슬라이드가 연속으로 보이게 설정 */
-    animation: slide 9s infinite;
-    margin-top:250px;
-    margin-bottom:100px;
+    width: calc(100% * 6); /* Adjust width for 6 slides (3 images * 2 for smooth looping) */
+    animation: slide 9s linear infinite;
 }
 
 .slide {
-    width: 33.33%; /* 슬라이드 개수에 따라 너비 설정 */
+    width: calc(100% / 6); /* Adjust width for each slide to fit 6 in the container */
     flex-shrink: 0;
 }
 
 .slide img {
     width: 100%;
     display: block;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Move left by 50% of the total width (3 slides worth) */
 }
 
 @keyframes slide {
@@ -1091,7 +1094,7 @@ section.chartintro {
             pointer-events: auto; /* Enable interaction */
         }
         .hirophone img{
-            width:103%;
+            width:104%;
             height: auto;
             margin-left: 0%;
             margin-bottom:-10px;
