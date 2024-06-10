@@ -499,12 +499,12 @@ body {
 
 .slides {
     display: flex;
-    width: calc(100% * 6); /* Adjust width for 6 slides (3 images * 2 for smooth looping) */
-    animation: slide 9s linear infinite;
+    width: calc(100% * 12); /* Adjust width for 12 slides */
+    animation: slide 50s linear infinite;
 }
 
 .slide {
-    width: calc(100% / 6); /* Adjust width for each slide to fit 6 in the container */
+    width: calc(100% / 12); /* Adjust width for each slide to fit 12 in the container */
     flex-shrink: 0;
 }
 
@@ -515,20 +515,9 @@ body {
 
 @keyframes slide {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Move left by 50% of the total width (3 slides worth) */
+    100% { transform: translateX(-100%); } /* Move left by 100% of the total width (12 slides worth) */
 }
 
-@keyframes slide {
-    0% { transform: translateX(0%); }
-    20% { transform: translateX(0%); }
-    25% { transform: translateX(-33.33%); }
-    45% { transform: translateX(-33.33%); }
-    50% { transform: translateX(-66.66%); }
-    70% { transform: translateX(-66.66%); }
-    75% { transform: translateX(-100%); }
-    95% { transform: translateX(-100%); }
-    100% { transform: translateX(0%); }
-}
     
     /*MAINPAGE DESCIPTION*/
    /* section.mainpage {
