@@ -1045,8 +1045,8 @@ section.chartintro {
         }
         /*USERPERSONA*/
         .section.userpersona {
-            width: 110%;
-            height: 110%;
+            width: 100%;
+            height: 100%;
             z-index: -1; /* Lower z-index to stay behind other sections */
             position: absolute;
        /
@@ -1068,8 +1068,8 @@ section.chartintro {
         /* hirophone*/
         
         .section.hirophone {
-            width: 110%;
-            height: 110%;
+            width: 100%;
+            height: 100%;
             background-image: url('img/hirophone.png');
             background-repeat: no-repeat;
             background-size: cover;
@@ -1083,7 +1083,7 @@ section.chartintro {
             pointer-events: auto; /* Enable interaction */
         }
         .hirophone img{
-            width:104%;
+            width:100%;
             height: auto;
             margin-left: 0%;
             margin-bottom:-10px;
