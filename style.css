@@ -998,8 +998,8 @@ section.chartintro {
         }
         .why img {
             justify-content: center;
-            width: 104%; /* Adjust as needed */
-            height: 104%; /* Adjust as needed */
+            width: 100%; /* Adjust as needed */
+            height: 100%; /* Adjust as needed */
             margin-left:0%;
     }
         .why .image-with-text {
