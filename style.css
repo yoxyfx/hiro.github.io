@@ -964,27 +964,27 @@ section.chartintro {
     
   .background img {
     justify-content: center;
-    width: 110%; /* Adjust as needed */
-    height: 110%; /* Adjust as needed */
+    width: 100%; /* Adjust as needed */
+    height: 100%; /* Adjust as needed */
     margin-left:0%;
 }
 /*CHART1*/
         section.backgroundmade {
             width: auto;
-            height: 1000px;
+            height: 100%;
             background-color: #ffcc80; /* Light orange */
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            width: 100%;
-            padding: 20px 0;
+          
+           
             margin-top:-10px;
         }
         
         .backgroundmade img {
                 justify-content: center;
-                width: 104%; /* Adjust as needed */
-                height: 104%; /* Adjust as needed */
+                width: 100%; /* Adjust as needed */
+                height: 100%; /* Adjust as needed */
                 margin-left:0%;
         }
 /*WHYMADE?*/
@@ -1095,8 +1095,8 @@ section.chartintro {
             margin-left: 0%;
         }
         .section.design {
-            width: 115%;
-            height: 115%;
+            width: 100%;
+            height: 100%;
             left: 0;
             transition: transform 6.0s ease; /* Smooth transition for movement */
             opacity: 1; /* Initially visible */
